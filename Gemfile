@@ -37,6 +37,7 @@ gem 'bootstrap-sass', '~> 3.3.4'
 gem 'rails_12factor', group: :production
 gem 'pg', group: :production
 gem 'unicorn'
+gem 'rack-handlers'
 gem 'rack-timeout'
 gem 'elasticsearch-model', git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
 gem 'elasticsearch-rails', git: 'git://github.com/elasticsearch/elasticsearch-rails.git'

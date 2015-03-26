@@ -1,8 +1,8 @@
 <div class="container">
   <p id="notice"><%= notice %></p>
-
-  <center><h1>Articles</h1></center>
-
+ 
+  <center><h1>Search Results</h1></center>
+ 
   <table class="table table-hover">
     <thead>
       <tr>
@@ -12,7 +12,7 @@
         <th colspan="3"></th>
       </tr>
     </thead>
-
+ 
     <tbody>
       <% @articles.each do |article| %>
         <tr>
@@ -26,8 +26,8 @@
       <% end %>
     </tbody>
   </table>
-
+ 
   <br>
-
+ 
   <%= link_to 'New Article', new_article_path, class: "btn btn-default" %>
 </div>

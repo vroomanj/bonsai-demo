@@ -40,6 +40,8 @@ class ArticlesController < ApplicationController
   # PATCH/PUT /articles/1
   # PATCH/PUT /articles/1.json
   def update
+    @article.__elasticsearch__.update_document
+    
     respond_to do |format|
       if @article.update(article_params)
         format.html { redirect_to @article, notice: 'Article was successfully updated.' }
@@ -58,6 +60,14 @@ class ArticlesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to articles_url, notice: 'Article was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def search
+    if params[:search].present?
+      @articles = Article.__elasticsearch__.search(params[:search]).records
+    else
+      @articles = Article.all
     end
   end
 
